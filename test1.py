@@ -30,10 +30,9 @@ def import_runs(directory):
   csv_paths = glob.glob(str(dir_abspath)+"*/*.csv")
   for csv_path in cs_paths:
     with open(path) as csv:
-      line = csv.readline()
-      count = 1
-      while line:
-        pass
+      csv_reader = reader(csv)
+      for row in csv_reader:
+        print(row)
       
 def get_args():
   parser = argeparse.ArgumentParser
